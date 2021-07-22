@@ -6,6 +6,8 @@ rm /tmp/allkeys.txt
 echo "keys '*'" | redis-cli -h "$ip" -p "$port" -a "$password" 2>/dev/null >/tmp/allkeys.txt
 for line in $(cat "/tmp/allkeys.txt"); do
   echo -e "key: ""$line""\c"
-  echo -e "    key-value:""\c"
-  echo "get $line" | redis-cli -h "$ip" -p "$port" -a "$password" 2>/dev/null
+  echo -e "     ""key-value:""\c"
+  echo -e "get $line" | redis-cli -h "$ip" -p "$port" -a "$password"  2>/dev/null
+#  echo -e "ttl:""\c"
+#  echo "ttl $line" | redis-cli -h "$ip" -p "$port" -a "$password" 2>/dev/null
 done
