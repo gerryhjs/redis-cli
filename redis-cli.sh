@@ -23,5 +23,6 @@ for line in $(cat "./keys.txt"); do
   echo "$split""$ttl""    ""$split">>./"$file"
 done
 rm ./keys.txt
-#redis-cli -h "$ip" -p "$port" -a "$password" 
+#redis-cli -h "$ip" -p "$port" -a "$password"
+#echo redis-cli -h "$ip" -p "$port" -a "$password"
 # 2>/dev/null
